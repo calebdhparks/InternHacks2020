@@ -1,3 +1,14 @@
+1. First Download node.js if you don't have it : https://nodejs.org/en/download/
+2. Download react, firebase, etc <br/>
+  npm install -g create-react-app <br/>
+  npm install firebase <br/>
+  npm install react-router-dom <br/>
+  npm install recompose <br/>
+3. Navigate to ping-a-job directory 
+4. npm start 
+
+-------Below is auto generated readme---------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
