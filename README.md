@@ -3,9 +3,8 @@
   npm install -g create-react-app <br/>
   npm install firebase <br/>
   npm install react-router-dom <br/>
-  npm install recompose <br/>
-3. Navigate to ping-a-job directory 
-4. npm start 
+  npm install recompose <br/> 
+3. npm start 
 
 -------Below is auto generated readme---------
 
