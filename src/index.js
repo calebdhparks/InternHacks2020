@@ -3,13 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
 import Firebase, { FirebaseContext } from './components/Firebase';
+import Search from './search/search.js'
 
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
-  <FirebaseContext.Provider value={new Firebase()}>
-    <App />
-  </FirebaseContext.Provider>,
+ReactDOM.render(< Search/>,
   document.getElementById('root')
 );
 
