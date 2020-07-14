@@ -13,12 +13,13 @@ const Navigation = () => (
         authUser ? <NavigationAuth /> : <NavigationNonAuth />
       }
     </AuthUserContext.Consumer>
+    
   </div>
 );
 
 const NavigationAuth = () => (
-  <ul>
-    <li>
+  <ul className = "vertical-menu">
+    <li >
       <Link to={ROUTES.LANDING}>Landing</Link>
     </li>
     <li>
@@ -29,11 +30,15 @@ const NavigationAuth = () => (
     </li>
     <li>
      <Link to={ROUTES.ADMIN}>Admin</Link>
-   </li>
+    </li>
+    <li>
+     <Link to={ROUTES.TRACK_MANAGE_APP}>Track and Manage Applications</Link>
+    </li>
     <li>
       <SignOutButton />
     </li>
   </ul>
+  
 );
 
 const NavigationNonAuth = () => (
