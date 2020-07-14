@@ -1,18 +1,29 @@
+.navBar{
+  float: left;
+  margin-right: 30px;
+  margin-left: 0px;
+}
+
+.main{
+  width: 70%;
+  float: right;
+  padding: 10px;
+  border: 2px solid gray;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Georgia, serif; 
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: Georgia, serif;
 }
 .vertical-menu {
-  width: 150px; /* Set a width if you like */
+ /*  width: 150px; Set a width if you like */
+  margin-left: 0px;
+  float: left;
+  width: 90%;
 }
 
 .vertical-menu a {
@@ -35,22 +46,11 @@ code {
   color: white;
 }
 
-.form td{
-  width: 50%;
-}
-
-.division {
-  background-color: #f2f2f2;
-  padding: 5px 20px 15px 20px;
-  border: 1px solid lightgrey;
-  border-radius: 3px;
-  width: 50%;
-  
-}
 .form{
   padding: 50px;
   background-color: #ccc;
-  text-align: center;
+  align-content: center;
+  float: left;
 }
 
 label {
@@ -87,7 +87,6 @@ label {
 }
 
 .form button{
-  
   width: 50%;
   display: inline-block;
   margin-top: 30px;
@@ -96,4 +95,5 @@ label {
   border: 1px solid #ccc;
   border-radius: 3px;
 }
+
 

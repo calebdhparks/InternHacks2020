@@ -7,7 +7,7 @@ import * as ROUTES from '../../constants/routes';
 import { AuthUserContext } from '../Session';
 
 const Navigation = () => (
-  <div>
+  <div className="navBar">
     <AuthUserContext.Consumer>
       {authUser =>
         authUser ? <NavigationAuth /> : <NavigationNonAuth />
@@ -35,14 +35,14 @@ const NavigationAuth = () => (
      <Link to={ROUTES.TRACK_MANAGE_APP}>Track and Manage Applications</Link>
     </li>
     <li>
-      <SignOutButton />
+    <SignOutButton /> 
     </li>
   </ul>
   
 );
 
 const NavigationNonAuth = () => (
-  <ul>
+  <ul className = "vertical-menu">
     <li>
       <Link to={ROUTES.LANDING}>Landing</Link>
     </li>
@@ -53,3 +53,5 @@ const NavigationNonAuth = () => (
 );
 
 export default Navigation;
+
+/*<Link to={ROUTES.SIGN_IN}><SignOutButton /></Link>*/

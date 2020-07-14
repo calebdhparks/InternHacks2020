@@ -110,9 +110,10 @@ class Form extends Component{
             deadline,
             statusOfApplication,
             notes});
+
+        alert("Application Saved!")
         console.log("DATA SAVED");
         this.props.history.push(ROUTES.HOME);
-        
       }
     
     render(){
@@ -126,7 +127,7 @@ class Form extends Component{
             //this.state.searchWords  === '';
 
         return (
-            <div className= "division">
+            <div >
                 <form className='form' onSubmit={this.onSubmit}>
                     <h3>Log New Application</h3>
                     <table>
