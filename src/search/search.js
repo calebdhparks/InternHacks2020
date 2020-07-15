@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 
 class Search extends React.Component{
     constructor(props) {
@@ -20,14 +19,24 @@ class Search extends React.Component{
         //     .then(response => {console.log(response)})
         //     .catch(error => {console.log(error)})
 
-        //TODO: maybe use some other method instead of proxyurl
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
+        // const proxyurl = "https://cors-anywhere.herokuapp.com/";
+        const proxyurl = "https://afternoon-dusk-24100.herokuapp.com/"
         const url = 'https://jobs.github.com/positions.json?description='+
             this.state.description+"&location="+this.state.location+"&full_time=true"
+        fetch(proxyurl + url)
+            .then(data => {
+                console.log(data.json());
+            })
+            .catch(e => {
+                alert("Error: " + e.toString());
+            });
 
-        fetch(proxyurl+url)
-            .then(response => {console.log(response.json())})
-            .catch(error => {console.log(error)})
+
+        // fetch(url)
+        //     .then(response => {console.log(response.json())})
+        //     .catch(error => {
+        //         console.log(error);
+        //     });
 
     }
 
@@ -38,6 +47,7 @@ class Search extends React.Component{
     render() {
         const { description, location } = this.state
         return (
+            <div>
             <form onSubmit={this.handleSubmit}>
             <h1>Job Explorer</h1>
             <div>
@@ -51,7 +61,8 @@ class Search extends React.Component{
                        onChange={this.handleChange}/>
             </div>
             <button type="submit">Search!</button>
-        </form>
+            </form>
+            </div>
         )
     }
 }
