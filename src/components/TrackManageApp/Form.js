@@ -17,7 +17,7 @@ class Form extends Component{
             compName: "",
             description : "",
             deadline : "",
-            statusOfApplication : "",
+            statusOfApplication : "Considering",
             notes : "",
             //searchWords : "",
         };
@@ -94,27 +94,48 @@ class Form extends Component{
     }*/
     
     onSubmit = event => {
-        event.preventDefault();
-
+        //event.preventDefault();
         const { position,
-                compName,
-                description,
-                deadline,
-                statusOfApplication,
-                notes}          = this.state;
-    
-        this.props.firebase
-        .applications().set({ position,
             compName,
             description,
             deadline,
             statusOfApplication,
-            notes});
+            notes}          = this.state;
 
-        alert("Application Saved!")
-        console.log("DATA SAVED");
-        this.props.history.push(ROUTES.HOME);
-      }
+        // Save the current state as object
+        var FB = this.props.firebase.applications()
+
+        // Get current logged in user's userId
+        this.props.firebase.auth.onAuthStateChanged(function(user) {
+            if (user) { //User is authenticated and logged in
+                // Get current uid
+                var uid = user.uid;
+                //alert(user.uid);
+                FB.push(
+                    {uid,
+                    position,
+                    compName,
+                    description,
+                    deadline,
+                    statusOfApplication,
+                    notes}
+                );
+                // alert the user
+                alert("Application saved Successfully!")
+                // log on console
+                console.log("DATA SAVED")
+                
+            }
+            else{
+                //if user is not logged in
+                alert("Please login with correct credentials!")
+                this.props.history.push(ROUTES.HOME)
+            }
+        
+        });
+    }
+        
+
     
     render(){
         var date = getTodaysDate();
@@ -146,12 +167,12 @@ class Form extends Component{
                         </tr>
                         <tr>
                             <td><b><label htmlFor="deadline">Job application Deadline :</label></b></td>
-                            <td><input type="date" id ="deadline" min={date}/></td>
+                            <td><input onChange={this.onChange} type="date" id ="deadline" min={date}/></td>
                         </tr>
                         <tr>
                             <td><b><label htmlFor="statusOfApplication">Stage Of Application:</label></b></td>
                             <td>
-                                <select name="statusOfApplication" id="statusOfApplication">
+                                <select onChange={this.onChange} name="statusOfApplication" id="statusOfApplication">
                                     <option value="Considering">Considering</option>
                                     <option value="Incomplete">Incomplete</option>
                                     <option value="Applied">Applied</option>

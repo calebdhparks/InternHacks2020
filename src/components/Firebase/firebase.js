@@ -39,7 +39,8 @@ const config = {
 
         users = () => this.db.ref('users');
 
-        applications = () => this.db.ref('Applications');
+        applications = () => this.db.ref('applications');
+    
     }
 
     export default Firebase
