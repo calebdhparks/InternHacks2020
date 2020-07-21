@@ -5,10 +5,13 @@ class Search extends React.Component{
         super(props);
         this.state = {
             description : '',
-            location: ''
+            location: '',
+            jobList: [],
+            toShow: false
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
+        this.makeList=this.makeList.bind(this)
     }
 
     handleSubmit(event){
@@ -24,14 +27,23 @@ class Search extends React.Component{
         const url = 'https://jobs.github.com/positions.json?description='+
             this.state.description+"&location="+this.state.location+"&full_time=true"
         fetch(proxyurl + url)
-            .then(data => {
-                console.log(data.json());
-            })
-            .catch(e => {
+                .then(response =>
+            response.json().then(data => ({
+                data: data,
+                status: response.status
+                  })
+              ).then(res => {
+                // for (var x in res.data){
+                  // console.log(Object.keys(res.data).length)
+                  this.setState({jobList:res.data})
+                  this.setState({toShow:true})
+                  // for (var x=0;x<Object.keys(res.data).length;x++){
+                  //   console.log(res.data[x])
+                  // }
+                // }
+              })).catch(e => {
                 alert("Error: " + e.toString());
-            });
-
-
+            })
         // fetch(url)
         //     .then(response => {console.log(response.json())})
         //     .catch(error => {
@@ -43,28 +55,110 @@ class Search extends React.Component{
     handleChange(event){
         this.setState({[event.target.name]: event.target.value})
     }
-
+    makeList({items}){
+      console.log(items)
+      return(
+        // <ul>
+        // {items.map(item =>
+        //   <li key={item.id}>{item.title}</li>
+        // )}
+        // </ul>
+        <ul>
+          {items.map(item => (
+            <li key={item.id}>
+              <span>
+                <strong> Company:</strong> {item.company }
+              </span>
+              <span>
+                <strong> title:</strong> {item.title}
+              </span>
+              <span>
+                <strong> Url</strong> {item.url}
+              </span>
+            </li>
+          ))}
+        </ul>
+      )
+    }
     render() {
-        const { description, location } = this.state
-        return (
-            <div>
-            <form onSubmit={this.handleSubmit}>
-            <h1>Job Explorer</h1>
-            <div>
-                <input type="text" className="form-control" name="description"
-                       value={description} placeholder="description"
-                       onChange={this.handleChange}/>
-            </div>
-            <div>
-                <input type="text" className="form-control" name="location"
-                       value={location} placeholder="loc"
-                       onChange={this.handleChange}/>
-            </div>
-            <button type="submit">Search!</button>
-            </form>
-            </div>
-        )
+        const { description, location, jobList,toShow } = this.state
+        console.log(this.state)
+        console.log(description, location, this.state.jobList,toShow )
+
+        // if (typeof this.state.jobsList !== 'undefined'){
+
+          return (
+              <div>
+              <form onSubmit={this.handleSubmit}>
+              <h1>Job Explorer</h1>
+              <div>
+                  <input type="text" className="form-control" name="description"
+                         value={description} placeholder="description"
+                         onChange={this.handleChange}/>
+              </div>
+              <div>
+                  <input type="text" className="form-control" name="location"
+                         value={location} placeholder="loc"
+                         onChange={this.handleChange}/>
+              </div>
+              <button type="submit">Search!</button>
+              </form>
+              {toShow&&<this.makeList items={this.state.jobList}/>}
+
+              </div>
+          )
+        // }
+        // else{
+        //   console.log("in else statement ")
+        //   return (
+        //       <div>
+        //       <form onSubmit={this.handleSubmit}>
+        //       <h1>Job Explorer</h1>
+        //
+        //       <div>
+        //           <input type="text" className="form-control" name="description"
+        //                  value={description} placeholder="description"
+        //                  onChange={this.handleChange}/>
+        //       </div>
+        //       <div>
+        //           <input type="text" className="form-control" name="location"
+        //                  value={location} placeholder="loc"
+        //                  onChange={this.handleChange}/>
+        //       </div>
+        //       <button type="submit">Search!</button>
+        //       </form>
+        //       </div>
+        //   )
+        // }
+
     }
 }
+function ItemList({ items }){
+  console.log("in function")
+  return(
+    <ul>
+    {items.map(item =>
+      <li key={item.id}>{item.title}</li>
+    )}
+    </ul>
+  )
+};
+// const UserList = ({ users }) => (
+//   <ul>
+//     {users.map(user => (
+//       <li key={user.id}>
+//         <span>
+//           <strong>ID:</strong> {user.uid}
+//         </span>
+//         // <span>
+//         //   <strong> E-Mail:</strong> {user.email}
+//         // </span>
+//         // <span>
+//         //   <strong> Username:</strong> {user.username}
+//         // </span>
+//       </li>
+//     ))}
+//   </ul>
+// );
 
 export default Search
