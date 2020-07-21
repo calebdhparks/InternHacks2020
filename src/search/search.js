@@ -73,7 +73,10 @@ class Search extends React.Component{
                 <strong> title:</strong> {item.title}
               </span>
               <span>
-                <strong> Url</strong> {item.url}
+                <strong> Url</strong> {
+                  <a href={item.url} target="_blank">{item.url}</a>
+
+                }
               </span>
             </li>
           ))}
@@ -143,22 +146,6 @@ function ItemList({ items }){
     </ul>
   )
 };
-// const UserList = ({ users }) => (
-//   <ul>
-//     {users.map(user => (
-//       <li key={user.id}>
-//         <span>
-//           <strong>ID:</strong> {user.uid}
-//         </span>
-//         // <span>
-//         //   <strong> E-Mail:</strong> {user.email}
-//         // </span>
-//         // <span>
-//         //   <strong> Username:</strong> {user.username}
-//         // </span>
-//       </li>
-//     ))}
-//   </ul>
-// );
+
 
 export default Search
