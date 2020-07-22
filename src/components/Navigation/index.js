@@ -16,36 +16,46 @@ const Navigation = () => (
 
   </div>
 );
-
+const menuStyle={
+  backgroundColor: '#eee'
+};
 const NavigationAuth = () => (
-  <ul className = "vertical-menu">
-    <li >
-      <Link to={ROUTES.LANDING}>Landing</Link>
+<div>
+  <ul className = "vertical-menu" style={menuStyle}>
+    <li>
+      <Link to={ROUTES.HOME}>My Dashboard</Link>
     </li>
     <li>
-      <Link to={ROUTES.HOME}>Home</Link>
-    </li>
-    <li>
-      <Link to={ROUTES.ACCOUNT}>Account</Link>
+      <Link to={ROUTES.TRACK_MANAGE_APP}>Job Applications</Link>
     </li>
     <li>
       <Link to={ROUTES.JOB_SEARCH}>Job Search</Link>
     </li>
     <li>
-     <Link to={ROUTES.ADMIN}>Admin</Link>
+      <Link to={ROUTES.LANDING}>Goals and Rewards</Link>
     </li>
     <li>
-     <Link to={ROUTES.TRACK_MANAGE_APP}>Track and Manage Applications</Link>
+      <Link to={ROUTES.ACCOUNT}>My Profile</Link>
     </li>
     <li>
     <SignOutButton />
     </li>
   </ul>
+  <ul className = "vertical-menu"  style={menuStyle}>
+    <li>
+      <Link to={ROUTES.HOME}>Notifications</Link>
+    </li>
+    <li>
+      <Link to={ROUTES.HOME}>Help & Support</Link>
+    </li>
+  </ul>
+  </div>
 
 );
 
 const NavigationNonAuth = () => (
-  <ul className = "vertical-menu">
+<div>
+  <ul className = "vertical-menu"  style={menuStyle}>
     <li>
       <Link to={ROUTES.LANDING}>Landing</Link>
     </li>
@@ -53,8 +63,17 @@ const NavigationNonAuth = () => (
       <Link to={ROUTES.SIGN_IN}>Sign In</Link>
     </li>
   </ul>
+  <ul className = "vertical-menu"  style={menuStyle}>
+    <li>
+      <Link to={ROUTES.HOME}>Help & Support</Link>
+    </li>
+  </ul>
+  </div>
 );
 
 export default Navigation;
 
 /*<Link to={ROUTES.SIGN_IN}><SignOutButton /></Link>*/
+// <li >
+//   <Link to={ROUTES.LANDING}>Landing</Link>
+// </li>
