@@ -17,7 +17,9 @@ const Navigation = () => (
   </div>
 );
 const menuStyle={
-  backgroundColor: '#eee'
+  backgroundColor: '#eee',
+  height:'100vh',
+  padding: '1px'
 };
 const NavigationAuth = () => (
 <div>
@@ -40,13 +42,14 @@ const NavigationAuth = () => (
     <li>
     <SignOutButton />
     </li>
-  </ul>
-  <ul className = "vertical-menu"  style={menuStyle}>
     <li>
       <Link to={ROUTES.HOME}>Notifications</Link>
     </li>
     <li>
       <Link to={ROUTES.HOME}>Help & Support</Link>
+    </li>
+    <li>
+      <Link to={ROUTES.HOME}>FAQ</Link>
     </li>
   </ul>
   </div>
@@ -62,8 +65,6 @@ const NavigationNonAuth = () => (
     <li>
       <Link to={ROUTES.SIGN_IN}>Sign In</Link>
     </li>
-  </ul>
-  <ul className = "vertical-menu"  style={menuStyle}>
     <li>
       <Link to={ROUTES.HOME}>Help & Support</Link>
     </li>

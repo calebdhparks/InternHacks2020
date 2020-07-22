@@ -7,7 +7,8 @@ class Search extends React.Component{
             description : '',
             location: '',
             jobList: [],
-            toShow: false
+            toShow: false,
+            loading:false
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -16,6 +17,7 @@ class Search extends React.Component{
 
     handleSubmit(event){
         event.preventDefault(); //avoid page refresh
+        this.setState({loading:true})
         // console.log(this.state)
         // axios.get('https://jobs.github.com/positions.json?description='+
         //     this.state.description+"&location="+this.state.location+"&full_time=true")
@@ -37,6 +39,7 @@ class Search extends React.Component{
                   // console.log(Object.keys(res.data).length)
                   this.setState({jobList:res.data})
                   this.setState({toShow:true})
+                  this.setState({loading:false})
                   // for (var x=0;x<Object.keys(res.data).length;x++){
                   //   console.log(res.data[x])
                   // }
@@ -84,7 +87,7 @@ class Search extends React.Component{
       )
     }
     render() {
-        const { description, location, jobList,toShow } = this.state
+        const { description, location, jobList,toShow,loading } = this.state
         // console.log(this.state)
         // console.log(description, location, this.state.jobList,toShow )
 
@@ -106,6 +109,7 @@ class Search extends React.Component{
               </div>
               <button type="submit">Search!</button>
               </form>
+              { loading && <div>Loading ...</div>}
               {toShow&&<this.makeList items={this.state.jobList}/>}
 
               </div>
