@@ -95,22 +95,23 @@ class Search extends React.Component{
 
           return (
               <div>
-              <form onSubmit={this.handleSubmit}>
-              <h1>Job Explorer</h1>
+              <form className='form' onSubmit={this.handleSubmit}>
+              <span className='titleJobs'>Jobs Searcher</span>
               <div>
                   <input type="text" className="form-control" name="description"
-                         value={description} placeholder="description"
+                         value={description} placeholder="Job Title"
                          onChange={this.handleChange}/>
               </div>
               <div>
                   <input type="text" className="form-control" name="location"
-                         value={location} placeholder="loc"
+                         value={location} placeholder="Location"
                          onChange={this.handleChange}/>
               </div>
-              <button type="submit">Search!</button>
-              </form>
+              <button type="submit">Search</button>
               { loading && <div>Loading ...</div>}
               {toShow&&<this.makeList items={this.state.jobList}/>}
+              </form>
+
 
               </div>
           )
