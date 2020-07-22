@@ -5,20 +5,23 @@
 }
 
 .main{
-  width: 70%;
+  /*width: 70%;*/
   float: right;
   padding: 10px;
   border: 2px solid gray;
 }
 
-body {
+/*body {
   margin: 0;
-  font-family: Georgia, serif; 
-}
+  font-family: Karla;
+  font-style: normal;
+}*/
 
-code {
-  font-family: Georgia, serif;
-}
+/*code {
+  font-family: Karla;
+  font-style: normal;
+}*/
+
 .vertical-menu {
  /*  width: 150px; Set a width if you like */
   margin-left: 0px;
@@ -47,11 +50,117 @@ code {
 }
 
 .form{
-  padding: 50px;
-  background-color: #ccc;
+  position: absolute;
+  left: 260px;
+  right: 24px;
+  top: 30px;
+  bottom: 29px;
+  padding: 10px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.07);
+  border-radius: 10px;
   align-content: center;
   float: left;
+  /*padding: 50px;
+  background-color: #ccc;
+  align-content: center;
+  float: left;*/
 }
+
+.titleJobs {
+  padding-left: 10px;
+  font-family: Karla;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  /* identical to box height */
+
+  /* Gray 1 */
+  color: #333333;
+}
+
+.jobApptrackDiv{
+  position: absolute;
+  left: 260px;
+  right: 24px;
+  top: 30px;
+  bottom: 29px;
+  padding: 10px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.07);
+  border-radius: 10px;
+}
+
+.appTracker_compName{
+  color: #000000;
+}
+.appTracker_position{
+  color: rgba(0, 0, 0, 0.5);
+}
+.appTracker_description{
+  color: #000000;
+}
+
+.appTracker_notes{
+  word-wrap: break-word;
+  color: #000000;
+  font-weight: normal;
+}
+.appTracker_statusOfApplication_box{
+  width: 135px;
+  height: 39px;
+  padding-left: 40px;
+  /* Gray 2 */
+  background: #4F4F4F;
+  border-radius: 10px;
+
+}
+
+.appTracker_statusOfApplication{
+  align-items: center;
+  /*padding-top: 10px;*/
+  font-family: Karla;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 18px;
+  /* or 100% */
+  display: flex;
+
+
+  /* Gray 6 */
+  color: #F2F2F2;
+}
+
+.jobAppTable tr{
+  font-family: Karla;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 18px;
+  /* identical to box height, or 100% */
+  display: flex;
+  align-items: center;
+  
+}
+/*.jobAppTable tr:hover{
+  background-color: #ccc;
+  border-radius: 3px;
+}
+*/
+.jobAppTable a:hover{
+  color: #404040;
+}
+
+.jobApptrackDiv td{
+  width: 220px;
+}
+.jobAppTable a{
+  color: rgba(0, 0, 0, 0.5);
+  text-underline-position: None ;
+}
+
 
 label {
   margin-bottom: 10px;
@@ -60,8 +169,8 @@ label {
 }
 
 .form input{
-  width: 100%;
-  display: inline-block;
+  
+  display: block;
   margin-bottom: 10px;
   padding: 12px;
   border: 1px solid #ccc;
@@ -69,7 +178,7 @@ label {
 }
 
 .form select{
-  width: 113%;
+  width: 85%;
   display: inline-block;
   margin-bottom: 10px;
   padding: 12px;
@@ -78,7 +187,7 @@ label {
 }
 
 .form textarea{
-  width: 100%;
+  width: 72%;
   display: inline-block;
   margin-bottom: 10px;
   padding: 12px;
@@ -87,7 +196,7 @@ label {
 }
 
 .form button{
-  width: 50%;
+  width: 15%;
   display: inline-block;
   margin-top: 30px;
   margin-bottom: 10px;
@@ -95,5 +204,4 @@ label {
   border: 1px solid #ccc;
   border-radius: 3px;
 }
-
 

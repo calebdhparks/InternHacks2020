@@ -3,6 +3,7 @@ import Form from './Form.js';
 import { withFirebase } from '../Firebase';
 
 function TrackMangeApp(){
+    
     return(
         <Form />
     )

@@ -140,17 +140,14 @@ class Form extends Component{
     render(){
         var date = getTodaysDate();
 
-        const isInvalid =
-            this.state.position === '' &&
-            this.state.compName === '' &&
-            this.state.description === '' &&
-            this.state.notes === '';
+        const isInvalid = this.state.compName === '';
+            
             //this.state.searchWords  === '';
 
         return (
             <div >
                 <form className='form' onSubmit={this.onSubmit}>
-                    <h3>Log New Application</h3>
+                    <h3>Log Application</h3>
                     <table>
                         <tbody>
                         <tr>
@@ -158,7 +155,7 @@ class Form extends Component{
                             <td><input onChange={this.onChange} type="text" name="position" id="position" placeholder="Position" value={this.state.position} /></td>
                         </tr>
                         <tr>
-                            <td><b><label htmlFor="compName">Company Name : </label></b></td>
+                            <td><b><label htmlFor="compName">Company Name* : </label></b></td>
                             <td><input onChange={this.onChange} type="text" id="compName" placeholder="Name of Company" value={this.state.compName}/></td>
                         </tr>
                         <tr>

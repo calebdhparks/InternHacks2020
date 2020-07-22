@@ -32,7 +32,10 @@ const NavigationAuth = () => (
      <Link to={ROUTES.ADMIN}>Admin</Link>
     </li>
     <li>
-     <Link to={ROUTES.TRACK_MANAGE_APP}>Track and Manage Applications</Link>
+     <Link to={ROUTES.TRACK_MANAGE_APP}>Log Applications</Link>
+    </li>
+    <li>
+     <Link to={ROUTES.VIEW_PREV_APP}>Application Tracker</Link>
     </li>
     <li>
     <SignOutButton /> 

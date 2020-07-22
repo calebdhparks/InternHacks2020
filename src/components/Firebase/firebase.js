@@ -30,16 +30,15 @@ const config = {
       doSignOut = () => this.auth.signOut();
       doPasswordReset = email => this.auth.sendPasswordResetEmail(email);
 
-      doPasswordUpdate = password =>
-        this.auth.currentUser.updatePassword(password);
+      doPasswordUpdate = password => this.auth.currentUser.updatePassword(password);
 
-        // *** User API ***
+      // *** User API ***
+      dbRef = () => this.auth;
+      user = uid => this.db.ref(`users/${uid}`);
 
-        user = uid => this.db.ref(`users/${uid}`);
+      users = () => this.db.ref('users');
 
-        users = () => this.db.ref('users');
-
-        applications = () => this.db.ref('applications');
+      applications = () => this.db.ref('applications');
     
     }
 
