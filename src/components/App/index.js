@@ -10,17 +10,18 @@ import HomePage from '../Home';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import TrackManageApp from '../TrackManageApp';
+import ViewPrevApps from '../ViewPrevApps';
 import Search from '../Search' ;
 
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
-
+import { withFirebase } from '../Firebase';
 const App = () => (
   <Router>
     <div>
       <Navigation />
 
-      <hr />
+      
 
       <Route exact path={ROUTES.LANDING} component={LandingPage} />
       <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
@@ -31,8 +32,10 @@ const App = () => (
       <Route path={ROUTES.ADMIN} component={AdminPage} />
       <Route path={ROUTES.JOB_SEARCH} component={Search}/>
       <Route path={ROUTES.TRACK_MANAGE_APP} component={TrackManageApp} />
+      <Route path={ROUTES.VIEW_PREV_APP} component={ViewPrevApps} />
     </div>
   </Router>
 );
 
+withFirebase(ViewPrevApps)
 export default withAuthentication(App);

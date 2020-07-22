@@ -7,3 +7,4 @@ export const ADMIN = '/admin';
 export const JOB_SEARCH='/search';
 export const PASSWORD_FORGET = '/pw-forget';
 export const TRACK_MANAGE_APP = '/track_manage_application'
+export const VIEW_PREV_APP = '/previous_applications'

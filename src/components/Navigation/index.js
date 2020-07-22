@@ -28,7 +28,10 @@ const NavigationAuth = () => (
       <Link to={ROUTES.HOME}>My Dashboard</Link>
     </li>
     <li>
-      <Link to={ROUTES.TRACK_MANAGE_APP}>Job Applications</Link>
+     <Link to={ROUTES.TRACK_MANAGE_APP}>Log Applications</Link>
+    </li>
+    <li>
+     <Link to={ROUTES.VIEW_PREV_APP}>Application Tracker</Link>
     </li>
     <li>
       <Link to={ROUTES.JOB_SEARCH}>Job Search</Link>
@@ -40,9 +43,6 @@ const NavigationAuth = () => (
       <Link to={ROUTES.ACCOUNT}>My Profile</Link>
     </li>
     <li>
-    <SignOutButton />
-    </li>
-    <li>
       <Link to={ROUTES.HOME}>Notifications</Link>
     </li>
     <li>
@@ -50,6 +50,9 @@ const NavigationAuth = () => (
     </li>
     <li>
       <Link to={ROUTES.HOME}>FAQ</Link>
+    </li>
+    <li>
+    <SignOutButton />
     </li>
   </ul>
   </div>

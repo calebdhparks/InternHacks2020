@@ -34,7 +34,7 @@ const config = {
         this.auth.currentUser.updatePassword(password);
 
         // *** User API ***
-
+        dbRef = () => this.auth;
         user = uid => this.db.ref(`users/${uid}`);
 
         users = () => this.db.ref('users');
