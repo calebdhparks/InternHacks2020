@@ -17,7 +17,7 @@ const Navigation = () => (
   </div>
 );
 const menuStyle={
-  backgroundColor: '#eee',
+  backgroundColor: 'eee',
   height:'100vh',
   padding: '1px'
 };
