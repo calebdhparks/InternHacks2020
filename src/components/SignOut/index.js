@@ -7,7 +7,7 @@ const SignOutButton = ({ firebase }) => (
   <Link to={ROUTES.LANDING} onClick={() => {
     firebase.doSignOut();
     alert('You are signed Out');
-  }}>
+  }}><img src='my_location_24px.png' alt="" className="logoNavBar"/>
     Sign Out
   </Link>
 

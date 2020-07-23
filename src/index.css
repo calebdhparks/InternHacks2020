@@ -11,6 +11,14 @@
   border: 2px solid gray;
 }
 
+.logo{
+  display: block;
+  padding: 10px;
+}
+.logoNavBar{
+  display: inline;
+  padding-right: 5px;
+}
 /*body {
   margin: 0;
   font-family: Karla;
@@ -24,30 +32,54 @@
 
 .vertical-menu {
  /*  width: 150px; Set a width if you like */
-  margin-left: 0px;
+  /*margin-left: 0px;
   float: left;
-  width: 90%;
+  width: 90%;*/
+  margin-left: -50px;
+  float: left;
+  width: 200px;
+  height: 700px;
+
+
+  background: #5363C7;
+  border-radius: 40px;
+
 }
 
 .vertical-menu a {
-  background-color: #eee; /* Grey background color */
-  color: black; /* Black text color */
-  display: block; /* Make the links appear below each other */
+  /* background-color: #eee; Grey background color */
+  /* color: black; Black text color */
+  display: inline-block;/* Make the links appear below each other */
   padding: 12px; /* Add some padding */
   text-decoration: none; /* Remove underline from links */
+  font-family: Karla;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+
+  color: #FFFFFF;
+
+  opacity: 0.5;
 }
 .vertical-menu li{
   display: inline;
 }
 
-.vertical-menu a:hover {
-  background-color: #ccc; /* Dark grey background on mouse-over */
+.vertical-menu a:hover{
+  color: #FFFFFF;
+  opacity: 1;
 }
 
-.vertical-menu a.active {
-  background-color: #4CAF50; /* Add a green color to the "active/current" link */
+/*.vertical-menu a:hover {
+  background-color: #ccc; /* Dark grey background on mouse-over 
+}*/
+
+/*.vertical-menu a.active {
+  background-color: #4CAF50; /* Add a green color to the "active/current" link 
   color: white;
-}
+}*/
 
 .form{
   position: absolute;

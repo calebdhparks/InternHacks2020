@@ -16,40 +16,41 @@ const Navigation = () => (
 
   </div>
 );
-const menuStyle={
+/*const menuStyle={
   backgroundColor: 'eee',
   height:'100vh',
   padding: '1px'
-};
+};*/
 const NavigationAuth = () => (
 <div>
-  <ul className = "vertical-menu" style={menuStyle}>
+
+  <ul className = "vertical-menu">
     <li>
-      <Link to={ROUTES.HOME}>My Dashboard</Link>
+      <img src='logo.png' alt="Logo" className="logo"/>
     </li>
     <li>
-     <Link to={ROUTES.TRACK_MANAGE_APP}>Log Applications</Link>
+      <Link to={ROUTES.HOME}><img src='dashboard_24px.png' alt="" className="logoNavBar"/>My Dashboard</Link>
     </li>
     <li>
-     <Link to={ROUTES.VIEW_PREV_APP}>Application Tracker</Link>
+     <Link to={ROUTES.TRACK_MANAGE_APP}><img src='assignment_24px.png' alt="" className="logoNavBar"/>Log Applications</Link>
     </li>
     <li>
-      <Link to={ROUTES.JOB_SEARCH}>Job Search</Link>
+     <Link to={ROUTES.VIEW_PREV_APP}><img src='assignment_24px.png' alt="" className="logoNavBar"/>Application Tracker</Link>
     </li>
     <li>
-      <Link to={ROUTES.LANDING}>Goals and Rewards</Link>
+      <Link to={ROUTES.JOB_SEARCH}><img src='view_list_24px.png' alt="" className="logoNavBar"/>Job Search</Link>
     </li>
     <li>
-      <Link to={ROUTES.ACCOUNT}>My Profile</Link>
+      <Link to={ROUTES.LANDING}><img src='my_location_24px.png' alt="" className="logoNavBar"/>Goals and Rewards</Link>
     </li>
     <li>
-      <Link to={ROUTES.HOME}>Notifications</Link>
+      <Link to={ROUTES.ACCOUNT}><img src='person_24px.png' alt="" className="logoNavBar"/>My Profile</Link>
     </li>
     <li>
-      <Link to={ROUTES.HOME}>Help & Support</Link>
+      <Link to={ROUTES.HOME}><img src='notifications_24px.png' alt="" className="logoNavBar"/>Notifications</Link>
     </li>
     <li>
-      <Link to={ROUTES.HOME}>FAQ</Link>
+      <Link to={ROUTES.HOME}><img src='call_24px.png' alt="" className="logoNavBar"/>Help & Support</Link>
     </li>
     <li>
     <SignOutButton />
@@ -61,15 +62,16 @@ const NavigationAuth = () => (
 
 const NavigationNonAuth = () => (
 <div>
-  <ul className = "vertical-menu"  style={menuStyle}>
+  <ul className = "vertical-menu"  >
     <li>
-      <Link to={ROUTES.LANDING}>Landing</Link>
+      <Link to={ROUTES.LANDING}><img src='my_location_24px.png' alt="" className="logoNavBar"/>Landing</Link>
+    </li>
+    <br/>
+    <li>
+      <Link to={ROUTES.SIGN_IN}><img src='my_location_24px.png' alt="" className="logoNavBar"/>Sign In</Link>
     </li>
     <li>
-      <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-    </li>
-    <li>
-      <Link to={ROUTES.HOME}>Help & Support</Link>
+      <Link to={ROUTES.HOME}><img src='call_24px.png' alt="" className="logoNavBar"/>Help & Support</Link>
     </li>
   </ul>
   </div>

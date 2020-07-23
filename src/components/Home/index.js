@@ -32,10 +32,28 @@ componentDidMount() {
 
 render(){
   const {users,loading}=this.state;
-  console.log(this.state,users,loading)
+  //console.log(this.state,users,loading)
+  console.log(this.props.firebase.auth.currentUser.uid);
+  var uid = this.props.firebase.auth.currentUser.uid;
+  /*this.props.firebase.auth.onAuthStateChanged(function(user) {
+    if (user) { //User is authenticated and logged in
+        // Get current uid
+        uid = user.uid;
+    }
+  });*/
+
+  console.log(users, uid)
+  var name = undefined;
+  for(var i=0; i<users.length; i++){
+    if(users[i].uid == uid){
+      name = users[i].username;
+      break;
+    }
+  }
+  console.log(name)
   return(
-    <div>
-    <h1>Hello, {!loading&&users[0].username}</h1>
+    <div className='form'>
+    <h1>Hello, {!loading&&name}</h1>
     <p>You have completed 60% of your goals this week</p>
     <h2>Tasks for this week</h2>
     <ul>

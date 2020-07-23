@@ -1,7 +1,7 @@
 import React from 'react';
 
 const App = () => (
-  <div>
+  <div className='form'>
     <h1>Welcome to Ping-A-Job</h1>
   </div>
 );
