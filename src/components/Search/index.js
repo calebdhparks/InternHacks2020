@@ -1,4 +1,7 @@
 import React from "react";
+import nlp from 'compromise';
+import Rec from './recommend.js'
+import { withFirebase } from '../Firebase';
 
 class Search extends React.Component{
     constructor(props) {
@@ -110,8 +113,8 @@ class Search extends React.Component{
               <button type="submit">Search</button>
               { loading && <div>Loading ...</div>}
               {toShow&&<this.makeList items={this.state.jobList}/>}
+              <Rec />
               </form>
-
 
               </div>
           )
